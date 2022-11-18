@@ -32,7 +32,7 @@ jobs:
 workflows:
   on_commit:
     jobs:
-      - build_and_test
+      # - build_and_test
       - deploy:
           requires:
             - build_and_test # only deploy if the build_and_test job has completed
