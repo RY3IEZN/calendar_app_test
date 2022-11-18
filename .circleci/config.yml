@@ -39,15 +39,15 @@ workflows:
           filters:
             branches:
               only: master # only deploy when on main/master
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only:
-                - master
-                - docs-node-js-language-guide
+  # nightly:
+  #   triggers:
+  #     - schedule:
+  #         cron: "0 0 * * *"
+  #         filters:
+  #           branches:
+  #             only:
+  #               - master
+  #               - docs-node-js-language-guide
     jobs:
       - build_and_test
       - deploy:
