@@ -39,7 +39,7 @@ jobs:
         with:
           host: 139.162.251.16
           username: secrets.HOST_USER
-          password: secrets.HOST_PWD
+          password: Linode123#Linode123#
           port: 22
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
