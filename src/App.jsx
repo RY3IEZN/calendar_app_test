@@ -1,6 +1,3 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
 import CreateEvent from "./pages/dashboard/createEvent";
 import Home from "./pages/home";
 import Invitee from "./pages/dashboard/Invitee";
