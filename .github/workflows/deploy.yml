@@ -16,16 +16,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "13.10"
-      - name: Install yarn and run unittest
+      - name: Install npm and run 
         run: |
-          yarn
-          yarn test
+          npm i
+          npm run start
         env:
           CI: true
       - name: Publish to Github Packages Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: my_github_username/my_repository_name/my_image_name
+          name: ry3iezn/calendar_app_test/calendarfrontserver
           registry: docker.pkg.github.com
           username: secrets.USERNAME_NAME
           password: ${{ secrets.GITHUB_TOKEN }}
