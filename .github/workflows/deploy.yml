@@ -19,6 +19,7 @@ jobs:
       - name: Install npm and install dependencies
         run: |
           npm i
+          npm run build
         env:
           CI: true
       - name: Publish to Github Packages Registry
