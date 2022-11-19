@@ -45,7 +45,7 @@ jobs:
           script: |
             sudo docker stop $(docker ps -a -q)
             sudo docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            sudo docker pull ghcr.io/ry3iezn/calendar_app_test/calendarfrontend:v1
+            docker pull ghcr.io/ry3iezn/calendar_app_test/calendarfrontserver:v1
             sudo docker run -d -p 3000:3000 ghcr.io/ry3iezn/calendar_app_test/calendarfrontend:v1
 
 # SADASDASDA
