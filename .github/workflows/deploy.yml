@@ -26,7 +26,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: nickstersz/frontendfromgit
-          registry: https://hub.docker.com/
+          registry: "https://hub.docker.com/"
           username: secrets.USERNAME_NAME
           password: secrets.docker_pwd
           dockerfile: ./Dockerfile
