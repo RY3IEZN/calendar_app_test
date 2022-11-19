@@ -16,10 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "13.10"
-      - name: Install npm and run
+      - name: Install npm and install dependencies
         run: |
           npm i
-          npm run start
         env:
           CI: true
       - name: Publish to Github Packages Registry
