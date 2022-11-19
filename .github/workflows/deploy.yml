@@ -47,8 +47,8 @@ jobs:
             cd calendarApp/
             cd dinnerwithfriends.mobile/
             git pull https://github.com/RY3IEZN/calendar_app_test.git
-            sudo docker build -t thefrontent:$(date +'%Y-%m-%d--%M-%S') .
-            sudo docker run -d -p 3000:3000 thefrontent:front
+            sudo docker build -t thefrontent:$(date +'%Y-%m-%d') .
+            sudo docker run -d -p 3000:3000 thefrontent:$(date +'%Y-%m-%d')
 
 # SADASDASDA
 # SADASDA
