@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 13.10
+      - name: Use Node.js 16
         uses: actions/setup-node@v1
         with:
           node-version: "13.10"
-      - name: Install npm and install dependencies
+      - name: Install npm and run
         run: |
           npm i
           npm run build
@@ -25,11 +25,11 @@ jobs:
       - name: Publish to Github Packages Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: nickstersz/frontendfromgit
-          registry: "https://hub.docker.com/"
+          name: RY3IEZN/calendar_app_test/calendarfrontserver
+          registry: docker.pkg.github.com
           username: secrets.USERNAME_NAME
-          password: secrets.docker_pwd
-          dockerfile: ./Dockerfile
+          password: ${{ secrets.GITHUB_TOKEN }}
+          dockerfile: ../Dockerfile
           tags: latest
       - name: Deploy package to your instance
         uses: appleboy/ssh-action@master
@@ -44,4 +44,6 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             docker stop $(docker ps -a -q)
-            docker run -d -p 3000:3000 nickstersz/frontendfromgit:latest
+            docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+            docker pull docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
+            docker run -dit -p 3000:3000 docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
