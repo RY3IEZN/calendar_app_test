@@ -25,7 +25,7 @@ jobs:
       - name: Publish to Github Packages Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: RY3IEZN/calendar_app_test/calendarfrontserver
+          name: ry3iezn/calendar_app_test/calendarfrontserver
           registry: docker.pkg.github.com
           username: secrets.USERNAME_NAME
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -45,8 +45,8 @@ jobs:
           script: |
             sudo docker stop $(docker ps -a -q)
             sudo docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            sudo docker pull docker.pkg.github.com/RY3IEZN/calendar_app_test/calendarfrontend:v1
-            sudo docker run -d -p 3000:3000 docker.pkg.github.com/RY3IEZN/calendar_app_test/calendarfrontend:v1
+            sudo docker pull docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:v1
+            sudo docker run -d -p 3000:3000 docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:v1
 
 # SADASDASDA
 # SADASDA
