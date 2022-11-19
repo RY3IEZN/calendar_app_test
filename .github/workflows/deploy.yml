@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           host: 139.162.251.16
-          username: secrets.HOST_USER
+          username: root
           password: Linode123#Linode123#
           port: 22
           envs: GITHUB_USERNAME, GITHUB_TOKEN
