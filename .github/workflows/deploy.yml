@@ -45,7 +45,7 @@ jobs:
           script: |
             cd calendarApp/
             cd dinnerwithfriends.mobile/
-            git pull https://github.com/RY3IEZN/calendar_app_test.git dev
+            git pull https://github.com/RY3IEZN/calendar_app_test.git
             sudo docker build -t thefrontent:front .
             sudo docker run -d -p 3000:3000 thefrontent:front
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import HomeImage from "../../assets/img/Home.png";
@@ -38,7 +38,7 @@ const Home = () => {
               where you can unwind after a busy week, this is why we built catch
               and all in one platform that solves this problem.
             </p>
-            <Link
+            {/* <Link
               to="#"
               className="w-full inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 lg:w-1/3"
             >
@@ -55,7 +55,7 @@ const Home = () => {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
