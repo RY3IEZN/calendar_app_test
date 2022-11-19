@@ -25,10 +25,10 @@ jobs:
       - name: Publish to Github Packages Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: ry3iezn/calendar_app_test/calendarfrontend
-          registry: docker.pkg.github.com
+          name: nickstersz/frontendfromgit
+          registry: hub.docker.com
           username: secrets.USERNAME_NAME
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: secrets.docker_pwd
           dockerfile: ./Dockerfile
           tags: latest
       - name: Deploy package to your instance
@@ -44,6 +44,4 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             docker stop $(docker ps -a -q)
-            docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
-            docker run -dit -p 3000:3000 docker.pkg.github.com/ry3iezn/calendarfrontend:latest
+            docker run -d -p 3000:3000 nickstersz/frontendfromgit:latest
