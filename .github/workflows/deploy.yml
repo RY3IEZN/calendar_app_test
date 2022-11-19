@@ -43,7 +43,7 @@ jobs:
           port: 22
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
-            docker stop $(docker ps -a -q)
-            docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
-            docker run -d -p 3000:3000 docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
+            sudo docker stop $(docker ps -a -q)
+            sudo docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+            sudo docker pull docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
+            sudo docker run -d -p 3000:3000 docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
