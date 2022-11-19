@@ -29,7 +29,7 @@ jobs:
           registry: docker.pkg.github.com
           username: secrets.USERNAME_NAME
           password: ${{ secrets.GITHUB_TOKEN }}
-          dockerfile: ../Dockerfile
+          dockerfile: ./Dockerfile
           tags: latest
       - name: Deploy package to your instance
         uses: appleboy/ssh-action@master
@@ -45,5 +45,4 @@ jobs:
           script: |
             docker stop $(docker ps -a -q)
             docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
-            docker run -dit -p 3000:3000 docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
+            docker run -d -p 3000:3000 docker.pkg.github.com/ry3iezn/calendar_app_test/calendarfrontend:latest
