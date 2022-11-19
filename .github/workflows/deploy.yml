@@ -43,10 +43,11 @@ jobs:
           port: 22
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
+            docker stop $(docker ps -a -q)
             cd calendarApp/
             cd dinnerwithfriends.mobile/
             git pull https://github.com/RY3IEZN/calendar_app_test.git
-            sudo docker build -t thefrontent:front .
+            sudo docker build -t thefrontent:$(date +'%Y-%m-%d--%M-%S') .
             sudo docker run -d -p 3000:3000 thefrontent:front
 
 # SADASDASDA
